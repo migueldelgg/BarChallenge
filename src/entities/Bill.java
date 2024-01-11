@@ -52,7 +52,7 @@ public class Bill {
     }
 
     public double feeding(){
-        return beer * 5.00 + softDrink * 3.00 + barbecue * 7;
+        return (beer * 5.00) + (softDrink * 3.00) + (barbecue * 7.00);
     }
     public double ticket() {
         return (gender == 'F') ? 8.00 : 10.00;
@@ -65,7 +65,7 @@ public class Bill {
             return "Isento de Couvert";
         }
         else {
-            return "Couvert = R$ " + String.format("%.2f", cover() +"%n");
+            return "Couvert = R$ " + String.format("%.2f", cover());
         }
     }
     public double total(){
@@ -73,10 +73,13 @@ public class Bill {
     }
 
     public String toString(){
-        return "Consumo = R$ "+ String.format("%.2f", feeding() +"%n") +
+        return "Consumo = R$ " + String.format("%.2f", feeding()) +
+                "\n" +
                 coverResult() +
-                "Ingresso = R$ "+ String.format("%.2f", ticket() + "%n")+
-                "%n" +
+                "\n" +
+                "Ingresso = R$ "+ String.format("%.2f", ticket()) +
+                "\n" +
+                "\n" +
                 "Valor a pagar = R$ "+ String.format("%.2f", total());
     }
 
